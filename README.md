@@ -7,8 +7,8 @@ Module ini dikembangkan oleh [Dr. Eng. Masita Dwi Mandini Manessa](https://www.l
 
 Penyelesaian latihan ini memerlukan penggunaan R dan Rstudio. Jika Anda menginstall aplikasi tersebut dapat mengunduh menggunakan menggunakan link berikut:
 
-1. (R)[https://cran.r-project.org/bin/windows/base/]
-2. (RStudio)[https://posit.co/download/rstudio-desktop/]
+1. [R](https://cran.r-project.org/bin/windows/base/)
+2. [RStudio](https://posit.co/download/rstudio-desktop/)
 
 --------------
 **Module Pelatihan dapat diakses pada link berikut:**
