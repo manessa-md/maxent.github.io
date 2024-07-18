@@ -18,3 +18,22 @@ Kegunaan R mencakup:
   •	Pembuatan perangkat lunak statistik
   
   •	Machine learning
+
+#### Instalasi R dan RStudio:
+
+Untuk menginstal R dan RStudio, ikuti langkah-langkah berikut:
+
+#### 1.	Menginstal R:
+ • Kunjungi website CRAN (Comprehensive R Archive Network) di https://cran.r-project.org.
+ 
+ • Pilih versi sesuai dengan sistem operasi yang Anda gunakan (Windows, Mac, atau Linux).
+  
+ • Download dan jalankan installer.
+ 
+ #### 2.	Menginstal RStudio:
+ 
+• Kunjungi website RStudio di https://rstudio.com dan pilih RStudio Desktop.
+
+• Pilih versi RStudio yang sesuai dengan sistem operasi Anda.
+
+• Download dan instal RStudio setelah R terinstal.
