@@ -150,21 +150,18 @@ vec[2]
 
 #### Membuat dan Manipulasi Data Frame:
 
-**R**
+R
 
-**Copy code**
-
-#### Membuat data frame
+Copy code
 ```
+# Membuat data frame
 df <- data.frame(
   id = c(1, 2, 3),
   name = c("Alice", "Bob", "Charlie"),
   age = c(25, 30, 35)
 )
-```
 
-#### Mengakses kolom data frame
-```
+# Mengakses kolom data frame
 df$name
 ```
 
@@ -173,18 +170,17 @@ df$name
 R
 
 Copy code
-
-#### Membuat list
 ```
+# Membuat list
+
 lst <- list(
   name = "Alice",
   scores = c(95, 82, 90),
   passed = TRUE
 )
-```
 
-#### Mengakses elemen list
-```
+# Mengakses elemen list
+
 lst$scores
 ```
 
@@ -193,15 +189,15 @@ lst$scores
 R
 
 Copy code
-
-#### Membuat faktor
 ```
+# Membuat faktor
+
 gender <- factor(c("Male", "Female", "Female", "Male"))
-```
 
-#### Mengakses faktor
-```
+# Mengakses faktor
+
 levels(gender)
+
 ```
 
 #### Membuat Tabel:
@@ -209,8 +205,9 @@ levels(gender)
 R
 Copy code
 
-#### Membuat tabel
 ```
+# Membuat tabel
+
 data <- c("Group1", "Group2", "Group1", "Group2", "Group2")
 tab <- table(data)
 ```
@@ -250,37 +247,32 @@ tab <- table(data)
 R
 Copy code
 
-#### Mengimpor library dplyr
 ```
+# Mengimpor library dplyr
+
 library(dplyr)
-```
 
-#### Mengimpor data dari CSV
-```
+# Mengimpor data dari CSV
+
 data <- read.csv("path/to/file.csv")
-```
 
-#### Filter untuk memilih baris dengan umur lebih dari 30 tahun
-```
+# Filter untuk memilih baris dengan umur lebih dari 30 tahun
+
 data_filtered <- filter(data, age > 30)
-```
 
-#### Mengurutkan data berdasarkan umur
-```
+# Mengurutkan data berdasarkan umur
+
 data_sorted <- arrange(data_filtered, age)
-```
 
-#### Memilih kolom tertentu
-```
+# Memilih kolom tertentu
+
 data_selected <- select(data_sorted, name, age)
-```
 
-#### Menambahkan kolom baru
-```
+# Menambahkan kolom baru
+
 data_mutated <- mutate(data_selected, new_age = age + 5)
-```
 
-#### Mengekspor data ke file CSV baru
-```
+# Mengekspor data ke file CSV baru
+
 write.csv(data_mutated, "path/to/updated_file.csv")
 ```
