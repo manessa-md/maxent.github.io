@@ -83,6 +83,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 ---
 ### 2.1 Tipe Data Dasar
 
+
 **Numeric, Character, Logical**:
 
 
@@ -93,7 +94,9 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 •	**Logical**: Tipe data ini hanya memiliki dua nilai, TRUE atau FALSE, yang digunakan untuk logika kondisional dan pengendalian alur.
 
 
+
 **Vektor, Matriks, dan Array:**
+
 
 •	**Vektor**: Koleksi elemen tipe data yang sama. Dalam R, vektor bisa dibuat menggunakan fungsi _c()_. Contoh: c(1, 2, 3, 4) untuk numeric atau c("a", "b", "c") untuk character.
 
