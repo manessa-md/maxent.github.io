@@ -55,6 +55,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
   •	**Files/Plots/Packages/Help/Viewer**: Tab yang berguna untuk navigasi file, melihat grafik, mengelola paket, mendapatkan bantuan, dan lainnya.
   
 **Penggunaan Dasar RStudio:**
+
 #### 1.	Console:
 
 • Tempat untuk eksperimen cepat dengan kode.
@@ -62,6 +63,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 • Jalankan perintah secara langsung dan lihat outputnya.
 
 #### 2.	Script:
+
 •	Buat skrip baru dengan File > New File > R Script.
 
 •	Tulis kode yang bisa dijalankan secara berulang.
@@ -69,11 +71,13 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 • Jalankan kode dari skrip ke console dengan menekan Ctrl+Enter (Cmd+Enter di Mac).
 
 #### 3.	Environment/History:
+
 •	**Environment**: Lihat daftar objek (variabel, fungsi) yang telah Anda buat.
 
 •	**History**: Lihat dan ulangi perintah yang telah Anda jalankan sebelumnya.
 
 #### 4.	Files/Plots/Packages/Help/Viewer:
+
 •	**Files**: Navigasi dan kelola file dari RStudio.
 
 •	**Plots**: Lihat plot yang dihasilkan oleh kode R.
@@ -111,6 +115,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 •	**Viewer**: Tampilkan konten HTML, PDF, dan lainnya.
 
 ### 2.2 Struktur Data Kompleks
+
 **Data Frames dan Lists:**
 
 •	**Data Frames**: Mungkin merupakan struktur data paling penting di R yang digunakan untuk menyimpan data tabel. Setiap kolom dalam data frame bisa memiliki tipe data yang berbeda (numeric, character, logical, dll), mirip dengan spreadsheet. Data frame dibuat dengan fungsi _data.frame()_.
@@ -126,6 +131,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 ---
 ### 2.3 Contoh Kode R untuk Struktur Data
 ---
+
 **Membuat dan Manipulasi Vektor:**
 
 R
