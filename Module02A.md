@@ -76,7 +76,9 @@ Penggunaan Dasar RStudio:
 
 •	**Plots**: Lihat plot yang dihasilkan oleh kode R.
 
+--- 
 ## 2: TIPE DATA DAN STRUKTUR DATA
+---
 ### 2.1 Tipe Data Dasar
 
 Numeric, Character, Logical:
