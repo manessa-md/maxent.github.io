@@ -1,7 +1,7 @@
 # Modul 2A : Dasar Bahasa Pemrograman R
-
+---
 ## 1. PENGENALAN R DAN RSTUDIO
-
+---
 ### 1.1 Pengenalan ke R
 
 #### Sejarah dan Kegunaan R:
@@ -103,3 +103,14 @@ Vektor, Matriks, dan Array:
 
 •	**Viewer**: Tampilkan konten HTML, PDF, dan lainnya.
 
+### 2.2 Struktur Data Kompleks
+Data Frames dan Lists:
+
+•	**Data Frames**: Mungkin merupakan struktur data paling penting di R yang digunakan untuk menyimpan data tabel. Setiap kolom dalam data frame bisa memiliki tipe data yang berbeda (numeric, character, logical, dll), mirip dengan spreadsheet. Data frame dibuat dengan fungsi data.frame().
+
+•	**Lists**: Koleksi elemen yang bisa memiliki tipe data dan panjang yang berbeda. List bisa menyimpan kombinasi dari berbagai struktur data lain, termasuk vektor, matriks, data frames, dan bahkan list lainnya. List dibuat dengan fungsi list().
+
+Faktor dan Tabel:
+
+•	**Faktor**: Digunakan untuk menyimpan data kategorikal. Faktor memiliki tingkat atau label yang menunjukkan kategori dari data tersebut. Misalnya, faktor untuk jenis kelamin bisa memiliki dua label, "Male" dan "Female". Faktor dibuat dengan fungsi factor().
+•	**Tabel**: Sering digunakan untuk membuat tabulasi silang dari data. Ini bisa sangat berguna untuk analisis data eksplorasi. Tabel dibuat menggunakan fungsi _table()._
