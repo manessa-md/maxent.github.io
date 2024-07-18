@@ -210,3 +210,72 @@ data <- c("Group1", "Group2", "Group1", "Group2", "Group2")
 tab <- table(data)
 ```
 
+## 3: OPERASI DASAR DAN PENGELOLAAN DATA
+
+### 3.1 Operasi Matematika dan Logika
+
+**Operator Aritmatika, Logika, dan Relasional:**
+
+•	**Operator Aritmatika**: Digunakan untuk melakukan perhitungan matematika dasar seperti penjumlahan (+), pengurangan (-), perkalian (*), pembagian (/), dan eksponensial (^). Contoh: 5 + 3 menghasilkan 8.
+
+•	**Operator Logika**: Meliputi operator AND (&), OR (|), dan NOT (!). Digunakan untuk membangun kondisi logika. Contoh: TRUE & FALSE menghasilkan FALSE.
+
+•	**Operator Relasional**: Digunakan untuk membandingkan nilai. Termasuk sama dengan (==), tidak sama dengan (!=), kurang dari (<), lebih dari (>), kurang dari atau sama dengan (<=), dan lebih dari atau sama dengan (>=). Contoh: 7 > 5 menghasilkan TRUE.
+
+### 3.2 Pengelolaan Data
+
+**Mengimpor dan Mengekspor Data (csv, Excel):**
+•	**Mengimpor Data dari CSV**: Gunakan fungsi read.csv() untuk membaca file CSV ke dalam R. Contoh: data <- read.csv("path/to/file.csv").
+
+•	**Mengimpor Data dari Excel**: Gunakan paket readxl dan fungsi read_excel(). Contoh: library(readxl); data <- read_excel("path/to/file.xlsx").
+
+•	**Mengekspor Data ke CSV**: Gunakan fungsi write.csv(). Contoh: write.csv(data, "path/to/output.csv").
+
+**Penggunaan Fungsi dplyr untuk Manipulasi Data:**
+
+•	_**filter()**_: Digunakan untuk menyaring baris dalam dataframe berdasarkan kondisi tertentu. Contoh: filter(data, age > 30) untuk menyaring data di mana kolom age lebih dari 30.
+
+•	_**arrange()**_: Mengurutkan data berdasarkan kolom tertentu. Contoh: arrange(data, age) mengurutkan data berdasarkan kolom age.
+
+•	_**select()**_: Memilih satu atau beberapa kolom dari dataframe. Contoh: select(data, name, age) untuk memilih hanya kolom name dan age.
+
+•	_**mutate()**_: Menambahkan kolom baru ke dataframe yang dihitung dari kolom lain. Contoh: mutate(data, new_age = age + 5) menambahkan kolom new_age yang merupakan age ditambah 5.
+
+### Contoh Kode R untuk Pengelolaan Data
+R
+Copy code
+
+#### Mengimpor library dplyr
+```
+library(dplyr)
+```
+
+#### Mengimpor data dari CSV
+```
+data <- read.csv("path/to/file.csv")
+```
+
+#### Filter untuk memilih baris dengan umur lebih dari 30 tahun
+```
+data_filtered <- filter(data, age > 30)
+```
+
+#### Mengurutkan data berdasarkan umur
+```
+data_sorted <- arrange(data_filtered, age)
+```
+
+#### Memilih kolom tertentu
+```
+data_selected <- select(data_sorted, name, age)
+```
+
+#### Menambahkan kolom baru
+```
+data_mutated <- mutate(data_selected, new_age = age + 5)
+```
+
+#### Mengekspor data ke file CSV baru
+```
+write.csv(data_mutated, "path/to/updated_file.csv")
+```
