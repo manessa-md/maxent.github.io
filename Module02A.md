@@ -221,6 +221,7 @@ tab <- table(data)
 ### 3.2 Pengelolaan Data
 
 **Mengimpor dan Mengekspor Data (csv, Excel):**
+
 •	**Mengimpor Data dari CSV**: Gunakan fungsi read.csv() untuk membaca file CSV ke dalam R. Contoh: data <- read.csv("path/to/file.csv").
 
 •	**Mengimpor Data dari Excel**: Gunakan paket readxl dan fungsi read_excel(). Contoh: library(readxl); data <- read_excel("path/to/file.xlsx").
@@ -275,7 +276,6 @@ write.csv(data_mutated, "path/to/updated_file.csv")
 #### Berikut adalah sintaks dasar untuk mendefinisikan fungsi di R:
 
 R
-
 Copy code
 
 ```
@@ -317,7 +317,6 @@ Contoh Kode R untuk Fungsi
 #### Membuat Fungsi Sederhana:
 
 R
-
 Copy code
 
 ```
@@ -335,7 +334,6 @@ print(luasPersegi)
 #### Menggunakan Fungsi dari Paket Lain:
 
 R
-
 Copy code
 
 ```
@@ -353,7 +351,6 @@ ggplot(data, aes(x=x, y=y)) + geom_point()
 #### Modifikasi Fungsi:
 
 R
-
 Copy code
 
 ```
@@ -382,7 +379,6 @@ hitungLuasVerbose <- function(panjang, lebar, verbose=TRUE) {
 #### Sintaks Dasar:
 
 R
-
 Copy code
 ```
 ggplot(data = <DATA>, aes(<ESTETIKA>)) + 
@@ -396,7 +392,6 @@ ggplot(data = <DATA>, aes(<ESTETIKA>)) +
 •	**Histogram**: Digunakan untuk visualisasi distribusi frekuensi. Contoh penggunaan:
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=variable)) + geom_histogram(bins=30)
@@ -405,7 +400,6 @@ ggplot(data, aes(x=variable)) + geom_histogram(bins=30)
 •	**Scatter Plots**: Berguna untuk menilai hubungan antara dua variabel. Contoh:
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=variable1, y=variable2)) + geom_point()
@@ -414,7 +408,6 @@ ggplot(data, aes(x=variable1, y=variable2)) + geom_point()
 •	**Line Charts**: Efektif untuk menunjukkan tren data sepanjang waktu. Contoh:
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=time, y=value)) + geom_line()
@@ -423,7 +416,6 @@ ggplot(data, aes(x=time, y=value)) + geom_line()
 •	**Bar Plots**: Digunakan untuk membandingkan kuantitas antar kategori. Contoh:
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=factor, y=value)) + geom_bar(stat="identity")
@@ -434,7 +426,6 @@ ggplot(data, aes(x=factor, y=value)) + geom_bar(stat="identity")
 •	**Warna dan Fill**: Mengatur warna garis dan isi.
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=variable, fill=factor)) + geom_histogram()
@@ -445,7 +436,6 @@ ggplot(data, aes(x=variable, fill=factor)) + geom_histogram()
 •	**Label**: Menambahkan judul dan label sumbu.
 
 R
-
 Copy code
 
 ```
@@ -457,7 +447,6 @@ ggplot(data, aes(x=variable, y=value)) +
 •	**Tema**: Mengubah tema grafik menggunakan fungsi theme().
 
 R
-
 Copy code
 ```
 ggplot(data, aes(x=time, y=value)) + geom_line() +
@@ -467,7 +456,6 @@ ggplot(data, aes(x=time, y=value)) + geom_line() +
 #### Contoh Kode R untuk Membuat Grafik
 
 R
-
 Copy code
 ```
 # Membuat scatter plot dengan ggplot2
@@ -479,3 +467,131 @@ ggplot(data, aes(x=x, y=y)) +
   labs(title="Contoh Scatter Plot", x="Nilai X", y="Nilai Y") +
   theme_bw()
 ```
+
+---
+## 6: PENGENDALIAN ALUR PROGRAM
+---
+
+### 6.1 Conditional Statements
+
+**Penggunaan if, else, dan ifelse**: Struktur kondisional digunakan untuk mengendalikan alur eksekusi kode berdasarkan kondisi yang ditentukan.
+
+•	**if**: Digunakan untuk mengeksekusi blok kode hanya jika kondisi tertentu terpenuhi.
+
+R
+Copy code
+
+```
+if (kondisi) {
+  # kode untuk dieksekusi jika kondisi benar
+}
+```
+
+•	**else**: Menyediakan alternatif blok kode yang akan dieksekusi jika kondisi dalam if tidak terpenuhi.
+
+R
+Copy code
+
+```
+if (kondisi) {
+  # kode jika kondisi benar
+} else {
+  # kode jika kondisi salah
+}
+```
+
+•	**ifelse()**: Fungsi vektorisasi yang mengembalikan satu set nilai berdasarkan vektor kondisi; sangat berguna dalam pemrograman R untuk pemrosesan vektor.
+
+R
+Copy code
+
+```
+hasil <- ifelse(kondisi, nilai_jika_benar, nilai_jika_salah)
+```
+
+### 6.2 Looping Constructs
+
+**For Loops, While Loops, dan Apply Functions**: Loop digunakan untuk mengeksekusi blok kode berulang kali, yang sangat membantu dalam pemrosesan data secara efisien.
+
+•	**For loops**: Melakukan iterasi atas sekumpulan nilai yang sudah ditentukan, sangat berguna untuk mengulangi operasi atas vektor atau list.
+
+R
+Copy code
+
+```
+for (i in 1:10) {
+  print(paste("Iterasi ke-", i))
+}
+```
+
+•	**While loops**: Melanjutkan eksekusi selama kondisi tetap benar. Penting untuk memastikan kondisi tersebut pada suatu saat akan menjadi salah untuk menghindari loop tak terbatas.
+
+R
+Copy code
+
+```
+i <- 1
+while (i <= 10) {
+  print(paste("Iterasi ke-", i))
+  i <- i + 1
+}
+```
+
+•	**Apply functions**: Kumpulan fungsi yang digunakan untuk menerapkan fungsi secara efisien ke baris atau kolom dari matriks atau elemen dari list tanpa perlu menggunakan loop eksplisit.
+
+• **lapply()**: Mengembalikan list, digunakan untuk list atau vektor.
+
+R
+Copy code
+
+```
+hasil <- lapply(list(1, 2, 3), function(x) x^2)
+```
+
+•	**sapply()**: Mirip dengan lapply, tapi mencoba menyederhanakan hasil menjadi vektor atau matriks jika memungkinkan.
+
+R
+Copy code
+
+```
+hasil <- sapply(list(1, 2, 3), function(x) x^2)
+```
+
+•	**apply()**: Digunakan untuk matriks, menerapkan fungsi ke baris atau kolom.
+
+R
+Copy code
+
+```
+m <- matrix(1:9, nrow=3)
+apply(m, 1, sum)  # Menjumlahkan setiap baris
+```
+
+#### Contoh Kode R untuk Pengendalian Alur Program
+
+R
+Copy code
+
+```
+# Contoh if, else
+x <- 5
+if (x > 0) {
+  print("x adalah positif")
+} else {
+  print("x adalah negatif atau nol")
+}
+
+# Contoh while loop
+i <- 1
+while (i <= 5) {
+  print(paste("Iterasi ke-", i))
+  i <- i + 1
+}
+
+# Contoh for loop dengan sapply
+angka <- 1:5
+kuadrat <- sapply(angka, function(x) x^2)
+print(kuadrat)
+```
+
+
