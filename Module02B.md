@@ -1,4 +1,4 @@
-Modul 2B : Analisis Distribusi Spesies Menggunakan Data Bioklimat
+# Modul 2B : Analisis Distribusi Spesies Menggunakan Data Bioklimat
 --------------
 
 Modul ini dirancang untuk membekali peserta dengan keterampilan dan pengetahuan yang diperlukan untuk mengumpulkan, mengolah, dan menganalisis data bioklimat dan kejadian spesies guna memodelkan distribusi spesies. Peserta akan belajar menggunakan berbagai paket di R untuk mengelola data lingkungan besar, melaksanakan analisis statistik, serta melakukan prediksi distribusi spesies saat ini dan masa depan berdasarkan skenario perubahan iklim.
