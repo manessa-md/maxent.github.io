@@ -138,13 +138,11 @@ R
 
 Copy code
 
-#### Membuat vektor
 ```
+# Membuat vektor
 vec <- c(10, 20, 30, 40)
-```
 
-#### Mengakses elemen vektor
-```
+# Mengakses elemen vektor
 vec[2]
 ```
 
@@ -172,7 +170,6 @@ R
 Copy code
 ```
 # Membuat list
-
 lst <- list(
   name = "Alice",
   scores = c(95, 82, 90),
@@ -180,7 +177,6 @@ lst <- list(
 )
 
 # Mengakses elemen list
-
 lst$scores
 ```
 
@@ -191,11 +187,9 @@ R
 Copy code
 ```
 # Membuat faktor
-
 gender <- factor(c("Male", "Female", "Female", "Male"))
 
 # Mengakses faktor
-
 levels(gender)
 
 ```
@@ -207,7 +201,6 @@ Copy code
 
 ```
 # Membuat tabel
-
 data <- c("Group1", "Group2", "Group1", "Group2", "Group2")
 tab <- table(data)
 ```
@@ -249,30 +242,23 @@ Copy code
 
 ```
 # Mengimpor library dplyr
-
 library(dplyr)
 
 # Mengimpor data dari CSV
-
 data <- read.csv("path/to/file.csv")
 
 # Filter untuk memilih baris dengan umur lebih dari 30 tahun
-
 data_filtered <- filter(data, age > 30)
 
 # Mengurutkan data berdasarkan umur
-
 data_sorted <- arrange(data_filtered, age)
 
 # Memilih kolom tertentu
-
 data_selected <- select(data_sorted, name, age)
 
 # Menambahkan kolom baru
-
 data_mutated <- mutate(data_selected, new_age = age + 5)
 
 # Mengekspor data ke file CSV baru
-
 write.csv(data_mutated, "path/to/updated_file.csv")
 ```
