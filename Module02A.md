@@ -128,9 +128,8 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 
 •	**Tabel**: Sering digunakan untuk membuat tabulasi silang dari data. Ini bisa sangat berguna untuk analisis data eksplorasi. Tabel dibuat menggunakan fungsi _table()._
 
----
+
 ### 2.3 Contoh Kode R untuk Struktur Data
----
 
 **Membuat dan Manipulasi Vektor:**
 
@@ -205,7 +204,9 @@ data <- c("Group1", "Group2", "Group1", "Group2", "Group2")
 tab <- table(data)
 ```
 
+---
 ## 3: OPERASI DASAR DAN PENGELOLAAN DATA
+---
 
 ### 3.1 Operasi Matematika dan Logika
 
@@ -261,4 +262,106 @@ data_mutated <- mutate(data_selected, new_age = age + 5)
 
 # Mengekspor data ke file CSV baru
 write.csv(data_mutated, "path/to/updated_file.csv")
+```
+
+---
+## 4: FUNGSI DI R
+----
+
+### 4.1 Membuat Fungsi
+
+**Sintaks dan Struktur Fungsi**: Fungsi di R didefinisikan menggunakan kata kunci function. Struktur dasar sebuah fungsi meliputi nama fungsi, daftar argumen, isi fungsi, dan nilai kembali. 
+
+#### Berikut adalah sintaks dasar untuk mendefinisikan fungsi di R:
+
+R
+
+Copy code
+
+```
+namaFungsi <- function(argumen1, argumen2, ...) {
+  # Isi fungsi
+  hasil <- operasi dengan argumen1 dan argumen2
+  return(hasil)
+}
+```
+
+**Argumen dan Nilai Kembali:**
+
+•	**Argumen**: Fungsi dapat memiliki nol atau lebih argumen. Argumen adalah input yang diperlukan fungsi untuk menjalankan operasinya. Argumen bisa memiliki nilai default.
+
+•	**Nilai Kembali:** Fungsi di R mengembalikan nilai terakhir yang dievaluasi atau nilai yang secara eksplisit dikembalikan menggunakan perintah return(). Nilai ini bisa dari berbagai tipe data, seperti vektor, list, atau data frame.
+
+
+### 4.2 Menggunakan Fungsi
+
+**Fungsi Bawaan R**: R memiliki banyak fungsi bawaan yang siap pakai untuk tugas analisis data. Beberapa contoh meliputi:
+
+•	_**sum()**_: Menghitung total dari elemen numerik dalam vektor.
+
+•	_**mean()**_: Menghitung rata-rata.
+
+•	_**sd()**_: Menghitung standar deviasi.
+
+•	_**lm()**_: Melakukan regresi linear.
+
+
+**Pakai dan Modifikasi Fungsi dari Paket Lain:**
+
+•	**Pakai Fungsi**: R memiliki ribuan paket yang dapat diinstal dan digunakan. Setiap paket ini memiliki fungsi-fungsi khusus. Misalnya, fungsi ggplot() dari paket ggplot2 digunakan untuk membuat visualisasi data yang kompleks.
+
+•	**Modifikasi Fungsi**: Anda bisa memodifikasi fungsi yang ada atau menulis fungsi pembantu untuk meningkatkan atau mengadaptasi fungsionalitasnya. Hal ini sering dilakukan dengan menulis fungsi baru yang menggunakan fungsi dari paket lain sebagai bagian dari operasinya.
+
+Contoh Kode R untuk Fungsi
+
+#### Membuat Fungsi Sederhana:
+
+R
+Copy code
+
+```
+# Fungsi untuk menghitung luas persegi
+hitungLuas <- function(panjang, lebar) {
+  luas <- panjang * lebar
+  return(luas)
+}
+
+# Memanggil fungsi
+luasPersegi <- hitungLuas(5, 10)
+print(luasPersegi)
+```
+
+#### Menggunakan Fungsi dari Paket Lain:
+
+R
+
+Copy code
+
+```
+# Menggunakan ggplot2 untuk membuat grafik
+library(ggplot2)
+
+data <- data.frame(
+  x = rnorm(100),
+  y = rnorm(100)
+)
+
+ggplot(data, aes(x=x, y=y)) + geom_point()
+```
+
+#### Modifikasi Fungsi:
+
+R
+
+Copy code
+
+```
+# Fungsi untuk menghitung luas dengan opsi untuk log hasil
+hitungLuasVerbose <- function(panjang, lebar, verbose=TRUE) {
+  luas <- panjang * lebar
+  if (verbose) {
+    message("Menghitung luas...")
+  }
+  return(luas)
+}
 ```
