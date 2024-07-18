@@ -366,3 +366,116 @@ hitungLuasVerbose <- function(panjang, lebar, verbose=TRUE) {
   return(luas)
 }
 ```
+
+## 5: Visualisasi Data
+
+### 5.1 Pengenalan ke ggplot2
+
+**Filosofi dan Sintaks Dasar ggplot2**: ggplot2 adalah salah satu paket visualisasi data paling populer di R, berdasarkan prinsip-prinsip "The Grammar of Graphics". Filosofi ini memandang grafik sebagai representasi sistematis dari data yang menggabungkan variabel-variabel ke dalam estetika visual seperti sumbu, ukuran, warna, dan bentuk.
+
+•	**Layer**: Grafik dibuat dengan menambahkan lapisan. Setiap lapisan bisa berisi data, transformasi statistik, elemen geografis, dan estetika.
+
+•	**Aes (Aesthetics)**: Fungsi aes() digunakan untuk mendefinisikan pemetaan estetika, menghubungkan variabel data ke aspek visual grafik.
+
+•	**Geom (Geometries)**: Geom adalah tipe objek yang menggambarkan tipe plot apa yang akan dibuat, seperti geom_point(), geom_histogram(), dll.
+
+#### Sintaks Dasar:
+
+R
+
+Copy code
+```
+ggplot(data = <DATA>, aes(<ESTETIKA>)) + 
+  <GEOM_FUNCTION>(additional options)
+```
+
+### 5.2 Membuat Grafik
+
+#### Histogram, Scatter Plots, Line Charts, dan Bar Plots:
+
+•	**Histogram**: Digunakan untuk visualisasi distribusi frekuensi. Contoh penggunaan:
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=variable)) + geom_histogram(bins=30)
+```
+
+•	**Scatter Plots**: Berguna untuk menilai hubungan antara dua variabel. Contoh:
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=variable1, y=variable2)) + geom_point()
+```
+
+•	**Line Charts**: Efektif untuk menunjukkan tren data sepanjang waktu. Contoh:
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=time, y=value)) + geom_line()
+```
+
+•	**Bar Plots**: Digunakan untuk membandingkan kuantitas antar kategori. Contoh:
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=factor, y=value)) + geom_bar(stat="identity")
+```
+
+#### Penyesuaian Estetika Grafik (Warna, Legenda, Label):
+
+•	**Warna dan Fill**: Mengatur warna garis dan isi.
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=variable, fill=factor)) + geom_histogram()
+```
+
+•	**Legenda**: Otomatis terbentuk dari estetika yang digunakan.
+
+•	**Label**: Menambahkan judul dan label sumbu.
+
+R
+
+Copy code
+
+```
+ggplot(data, aes(x=variable, y=value)) + 
+  geom_bar(stat="identity") +
+  labs(title="Judul Grafik", x="Sumbu X", y="Sumbu Y")
+```
+
+•	**Tema**: Mengubah tema grafik menggunakan fungsi theme().
+
+R
+
+Copy code
+```
+ggplot(data, aes(x=time, y=value)) + geom_line() +
+  theme_minimal()
+```
+
+#### Contoh Kode R untuk Membuat Grafik
+
+R
+
+Copy code
+```
+# Membuat scatter plot dengan ggplot2
+library(ggplot2)
+data <- data.frame(x = rnorm(100), y = rnorm(100))
+
+ggplot(data, aes(x=x, y=y)) + 
+  geom_point() + 
+  labs(title="Contoh Scatter Plot", x="Nilai X", y="Nilai Y") +
+  theme_bw()
+```
