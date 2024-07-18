@@ -10,7 +10,11 @@ R adalah sebuah bahasa pemrograman dan lingkungan statistik yang banyak digunaka
 Kegunaan R mencakup:
 
   •	Analisis statistik data
+  
   •	Pembuatan grafik secara grafis
+  
   •	Pengolahan dan manipulasi data
+  
   •	Pembuatan perangkat lunak statistik
+  
   •	Machine learning
