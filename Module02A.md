@@ -117,4 +117,93 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 **Faktor dan Tabel:**
 
 •	**Faktor**: Digunakan untuk menyimpan data kategorikal. Faktor memiliki tingkat atau label yang menunjukkan kategori dari data tersebut. Misalnya, faktor untuk jenis kelamin bisa memiliki dua label, "Male" dan "Female". Faktor dibuat dengan fungsi _factor()_.
+
 •	**Tabel**: Sering digunakan untuk membuat tabulasi silang dari data. Ini bisa sangat berguna untuk analisis data eksplorasi. Tabel dibuat menggunakan fungsi _table()._
+
+---
+### 2.3 Contoh Kode R untuk Struktur Data
+---
+**Membuat dan Manipulasi Vektor:**
+
+**R**
+
+**Copy code**
+
+#### Membuat vektor
+```
+vec <- c(10, 20, 30, 40)
+```
+
+#### Mengakses elemen vektor
+```
+vec[2]
+```
+
+#### Membuat dan Manipulasi Data Frame:
+
+**R**
+
+**Copy code**
+
+#### Membuat data frame
+```
+df <- data.frame(
+  id = c(1, 2, 3),
+  name = c("Alice", "Bob", "Charlie"),
+  age = c(25, 30, 35)
+)
+```
+
+#### Mengakses kolom data frame
+```
+df$name
+```
+
+#### Membuat dan Manipulasi List:
+
+**R**
+
+**Copy code**
+
+#### Membuat list
+```
+lst <- list(
+  name = "Alice",
+  scores = c(95, 82, 90),
+  passed = TRUE
+)
+```
+
+#### Mengakses elemen list
+```
+lst$scores
+```
+
+#### Membuat Faktor:
+
+**R**
+
+**Copy code**
+
+#### Membuat faktor
+```
+gender <- factor(c("Male", "Female", "Female", "Male"))
+```
+
+#### Mengakses faktor
+```
+levels(gender)
+```
+
+#### Membuat Tabel:
+
+**R**
+
+**Copy code**
+
+#### Membuat tabel
+```
+data <- c("Group1", "Group2", "Group1", "Group2", "Group2")
+tab <- table(data)
+```
+
