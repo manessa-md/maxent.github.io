@@ -128,9 +128,9 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
 ---
 **Membuat dan Manipulasi Vektor:**
 
-**R**
+R
 
-**Copy code**
+Copy code
 
 #### Membuat vektor
 ```
@@ -164,9 +164,9 @@ df$name
 
 #### Membuat dan Manipulasi List:
 
-**R**
+R
 
-**Copy code**
+Copy code
 
 #### Membuat list
 ```
@@ -184,9 +184,9 @@ lst$scores
 
 #### Membuat Faktor:
 
-**R**
+R
 
-**Copy code**
+Copy code
 
 #### Membuat faktor
 ```
@@ -200,9 +200,8 @@ levels(gender)
 
 #### Membuat Tabel:
 
-**R**
-
-**Copy code**
+R
+Copy code
 
 #### Membuat tabel
 ```
