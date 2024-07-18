@@ -91,9 +91,9 @@ Numeric, Character, Logical:
 
 Vektor, Matriks, dan Array:
 
-•	**Vektor**: Koleksi elemen tipe data yang sama. Dalam R, vektor bisa dibuat menggunakan fungsi c(). Contoh: c(1, 2, 3, 4) untuk numeric atau c("a", "b", "c") untuk character.
+•	**Vektor**: Koleksi elemen tipe data yang sama. Dalam R, vektor bisa dibuat menggunakan fungsi _c()_. Contoh: c(1, 2, 3, 4) untuk numeric atau c("a", "b", "c") untuk character.
 
-•	**Matriks**: Struktur data dua dimensi, dimana setiap elemen harus memiliki tipe data yang sama. Matriks bisa dibuat dengan fungsi matrix().
+•	**Matriks**: Struktur data dua dimensi, dimana setiap elemen harus memiliki tipe data yang sama. Matriks bisa dibuat dengan fungsi_ matrix()_.
 
 •	**Array**: Versi yang lebih umum dari matriks yang bisa memiliki lebih dari dua dimensi. Array dibuat dengan fungsi array().
 
@@ -106,11 +106,11 @@ Vektor, Matriks, dan Array:
 ### 2.2 Struktur Data Kompleks
 Data Frames dan Lists:
 
-•	**Data Frames**: Mungkin merupakan struktur data paling penting di R yang digunakan untuk menyimpan data tabel. Setiap kolom dalam data frame bisa memiliki tipe data yang berbeda (numeric, character, logical, dll), mirip dengan spreadsheet. Data frame dibuat dengan fungsi data.frame().
+•	**Data Frames**: Mungkin merupakan struktur data paling penting di R yang digunakan untuk menyimpan data tabel. Setiap kolom dalam data frame bisa memiliki tipe data yang berbeda (numeric, character, logical, dll), mirip dengan spreadsheet. Data frame dibuat dengan fungsi _data.frame()_.
 
-•	**Lists**: Koleksi elemen yang bisa memiliki tipe data dan panjang yang berbeda. List bisa menyimpan kombinasi dari berbagai struktur data lain, termasuk vektor, matriks, data frames, dan bahkan list lainnya. List dibuat dengan fungsi list().
+•	**Lists**: Koleksi elemen yang bisa memiliki tipe data dan panjang yang berbeda. List bisa menyimpan kombinasi dari berbagai struktur data lain, termasuk vektor, matriks, data frames, dan bahkan list lainnya. List dibuat dengan fungsi _list()._
 
 Faktor dan Tabel:
 
-•	**Faktor**: Digunakan untuk menyimpan data kategorikal. Faktor memiliki tingkat atau label yang menunjukkan kategori dari data tersebut. Misalnya, faktor untuk jenis kelamin bisa memiliki dua label, "Male" dan "Female". Faktor dibuat dengan fungsi factor().
+•	**Faktor**: Digunakan untuk menyimpan data kategorikal. Faktor memiliki tingkat atau label yang menunjukkan kategori dari data tersebut. Misalnya, faktor untuk jenis kelamin bisa memiliki dua label, "Male" dan "Female". Faktor dibuat dengan fungsi _factor()_.
 •	**Tabel**: Sering digunakan untuk membuat tabulasi silang dari data. Ini bisa sangat berguna untuk analisis data eksplorasi. Tabel dibuat menggunakan fungsi _table()._
