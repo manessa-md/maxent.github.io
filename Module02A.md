@@ -594,4 +594,99 @@ kuadrat <- sapply(angka, function(x) x^2)
 print(kuadrat)
 ```
 
+---
+# 7: PRAKTIK TERBAIK DALAM PEMROGRAMAN R
+---
+## 7.1 Penulisan Kode yang Baik
 
+**Komentar, Penamaan Variabel, dan Struktur Kode:**
+
+•	**Komentar**: Penting untuk menjelaskan apa yang dilakukan kode, mengapa keputusan tertentu dibuat, atau mengidentifikasi area yang memerlukan perbaikan. Komentar harus jelas dan relevan. Dalam R, komentar dimulai dengan #.
+
+R
+Copy code
+
+####  Ini adalah komentar yang menjelaskan fungsi berikut
+
+•	**Penamaan Variabel**: Gunakan nama yang deskriptif dan konsisten yang menggambarkan isi variabel. Hindari nama singkat dan tidak jelas. Gaya penamaan yang populer di R adalah snake_case.
+
+R
+Copy code
+
+```
+jumlah_siswa <- 25  # Baik
+js <- 25           # Kurang baik
+```
+
+•	**Struktur Kode**: Organisasi kode yang baik termasuk penggunaan indentasi yang konsisten dan memisahkan blok logika dengan spasi. Fungsi harus dibatasi pada tugas-tugas spesifik dan tidak terlalu panjang.
+
+
+### 7.2 Debugging dan Error Handling
+
+#### Cara Mengidentifikasi dan Mengatasi Error:
+
+•	**Membaca Pesan Error**: R menyediakan pesan error yang bisa membantu mengidentifikasi apa dan di mana kesalahan terjadi. Pesan ini harus dibaca secara seksama untuk memahami sumber masalahnya.
+
+•	**Debugging Tools**: RStudio menyediakan beberapa alat untuk debugging, seperti breakpoints dan console. Menggunakan browser() dalam fungsi dapat membantu memeriksa nilai saat runtime.
+
+R
+Copy code
+
+```
+debug_function <- function(x) {
+  browser()  # Memulai mode browser untuk debugging
+  print(x)
+}
+```
+
+•	**Error Handling**: Gunakan try-catch blok untuk mengelola error yang mungkin terjadi selama eksekusi fungsi dan mencegah kode berhenti secara tidak terduga.
+
+R
+Copy code
+
+```
+safe_division <- function(x, y) {
+  tryCatch({
+    result <- x / y
+    return(result)
+  }, warning = function(w) {
+    warn <- "Warning, something went wrong: "
+    message(warn, w)
+  }, error = function(e) {
+    err <- "Error in division: "
+    message(err, e)
+    NA  # Mengembalikan NA jika error
+  }, finally = {
+    message("Attempted division operation")
+  })
+}
+```
+
+#### Contoh Kode R untuk Praktik Terbaik
+
+R
+Copy code
+
+```
+# Penulisan kode yang baik dengan komentar
+jumlah_produk <- 100  # Jumlah total produk
+
+# Fungsi dengan penamaan yang baik dan error handling
+calculate_average <- function(total_sum, number_of_items) {
+  if (number_of_items == 0) {
+    stop("number_of_items cannot be zero")
+  }
+  average <- total_sum / number_of_items
+  return(average)
+}
+
+# Contoh menggunakan tryCatch untuk error handling
+result <- tryCatch({
+  calculate_average(200, 0)
+}, error = function(e) {
+  message("Error: ", e$message)
+  NA  # Mengembalikan NA jika terjadi error
+})
+
+print(result)  # Menampilkan hasil atau NA jika error
+```
