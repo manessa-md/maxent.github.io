@@ -42,7 +42,7 @@ Untuk menginstal R dan RStudio, ikuti langkah-langkah berikut:
 
 ### 1.2 Mengenal RStudio
 
-Antarmuka RStudio:
+**Antarmuka RStudio:**
 
 RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif. Antarmuka utama RStudio terdiri dari empat panel:
 
@@ -54,7 +54,7 @@ RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif
   
   •	**Files/Plots/Packages/Help/Viewer**: Tab yang berguna untuk navigasi file, melihat grafik, mengelola paket, mendapatkan bantuan, dan lainnya.
   
-Penggunaan Dasar RStudio:
+**Penggunaan Dasar RStudio:**
 #### 1.	Console:
 
 • Tempat untuk eksperimen cepat dengan kode.
@@ -83,7 +83,8 @@ Penggunaan Dasar RStudio:
 ---
 ### 2.1 Tipe Data Dasar
 
-Numeric, Character, Logical:
+**Numeric, Character, Logical**:
+
 
 •	**Numeric**: Ini adalah tipe data yang digunakan untuk menyimpan angka, yang bisa berupa bilangan bulat atau desimal (contoh: 5, 20, 3.1416).
 
@@ -91,7 +92,8 @@ Numeric, Character, Logical:
 
 •	**Logical**: Tipe data ini hanya memiliki dua nilai, TRUE atau FALSE, yang digunakan untuk logika kondisional dan pengendalian alur.
 
-Vektor, Matriks, dan Array:
+
+**Vektor, Matriks, dan Array:**
 
 •	**Vektor**: Koleksi elemen tipe data yang sama. Dalam R, vektor bisa dibuat menggunakan fungsi _c()_. Contoh: c(1, 2, 3, 4) untuk numeric atau c("a", "b", "c") untuk character.
 
@@ -106,13 +108,13 @@ Vektor, Matriks, dan Array:
 •	**Viewer**: Tampilkan konten HTML, PDF, dan lainnya.
 
 ### 2.2 Struktur Data Kompleks
-Data Frames dan Lists:
+**Data Frames dan Lists:**
 
 •	**Data Frames**: Mungkin merupakan struktur data paling penting di R yang digunakan untuk menyimpan data tabel. Setiap kolom dalam data frame bisa memiliki tipe data yang berbeda (numeric, character, logical, dll), mirip dengan spreadsheet. Data frame dibuat dengan fungsi _data.frame()_.
 
 •	**Lists**: Koleksi elemen yang bisa memiliki tipe data dan panjang yang berbeda. List bisa menyimpan kombinasi dari berbagai struktur data lain, termasuk vektor, matriks, data frames, dan bahkan list lainnya. List dibuat dengan fungsi _list()._
 
-Faktor dan Tabel:
+**Faktor dan Tabel:**
 
 •	**Faktor**: Digunakan untuk menyimpan data kategorikal. Faktor memiliki tingkat atau label yang menunjukkan kategori dari data tersebut. Misalnya, faktor untuk jenis kelamin bisa memiliki dua label, "Male" dan "Female". Faktor dibuat dengan fungsi _factor()_.
 •	**Tabel**: Sering digunakan untuk membuat tabulasi silang dari data. Ini bisa sangat berguna untuk analisis data eksplorasi. Tabel dibuat menggunakan fungsi _table()._
