@@ -317,6 +317,7 @@ Contoh Kode R untuk Fungsi
 #### Membuat Fungsi Sederhana:
 
 R
+
 Copy code
 
 ```
