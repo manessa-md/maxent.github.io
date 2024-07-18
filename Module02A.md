@@ -1,6 +1,6 @@
 # Modul 2A : Dasar Bahasa Pemrograman R
 
-## PENGENALAN R DAN RSTUDIO
+## 1. PENGENALAN R DAN RSTUDIO
 
 ### 1.1 Pengenalan ke R
 
@@ -44,13 +44,13 @@ Untuk menginstal R dan RStudio, ikuti langkah-langkah berikut:
 
 RStudio menyediakan antarmuka yang user-friendly untuk penggunaan R yang efektif. Antarmuka utama RStudio terdiri dari empat panel:
 
-  •	Console: Tempat Anda menulis dan menjalankan kode R.
+  •	**Console**: Tempat Anda menulis dan menjalankan kode R.
   
-  •	Script: Editor teks tempat Anda menulis skrip yang dapat disimpan dan dijalankan ulang.
+  •	**Script**: Editor teks tempat Anda menulis skrip yang dapat disimpan dan dijalankan ulang.
   
-  •	Environment/History: Menampilkan variabel yang aktif dalam memori dan riwayat kode yang telah dijalankan.
+  •	**Environment/History**: Menampilkan variabel yang aktif dalam memori dan riwayat kode yang telah dijalankan.
   
-  •	Files/Plots/Packages/Help/Viewer: Tab yang berguna untuk navigasi file, melihat grafik, mengelola paket, mendapatkan bantuan, dan lainnya.
+  •	**Files/Plots/Packages/Help/Viewer**: Tab yang berguna untuk navigasi file, melihat grafik, mengelola paket, mendapatkan bantuan, dan lainnya.
   
 Penggunaan Dasar RStudio:
 #### 1.	Console:
@@ -67,18 +67,37 @@ Penggunaan Dasar RStudio:
 • Jalankan kode dari skrip ke console dengan menekan Ctrl+Enter (Cmd+Enter di Mac).
 
 #### 3.	Environment/History:
-•	Environment: Lihat daftar objek (variabel, fungsi) yang telah Anda buat.
+•	**Environment**: Lihat daftar objek (variabel, fungsi) yang telah Anda buat.
 
-•	History: Lihat dan ulangi perintah yang telah Anda jalankan sebelumnya.
+•	**History**: Lihat dan ulangi perintah yang telah Anda jalankan sebelumnya.
 
 #### 4.	Files/Plots/Packages/Help/Viewer:
-•	Files: Navigasi dan kelola file dari RStudio.
+•	**Files**: Navigasi dan kelola file dari RStudio.
 
-•	Plots: Lihat plot yang dihasilkan oleh kode R.
+•	**Plots**: Lihat plot yang dihasilkan oleh kode R.
 
-•	Packages: Kelola paket-paket R, instalasi, dan update.
+## 2: TIPE DATA DAN STRUKTUR DATA
+### 2.1 Tipe Data Dasar
 
-•	Help: Akses dokumentasi untuk fungsi R.
+Numeric, Character, Logical:
 
-•	Viewer: Tampilkan konten HTML, PDF, dan lainnya.
+•	**Numeric**: Ini adalah tipe data yang digunakan untuk menyimpan angka, yang bisa berupa bilangan bulat atau desimal (contoh: 5, 20, 3.1416).
+
+•	**Character**: Tipe data untuk menyimpan teks. Setiap nilai karakter harus ditempatkan dalam tanda kutip (contoh: "Hello", "R").
+
+•	**Logical**: Tipe data ini hanya memiliki dua nilai, TRUE atau FALSE, yang digunakan untuk logika kondisional dan pengendalian alur.
+
+Vektor, Matriks, dan Array:
+
+•	**Vektor**: Koleksi elemen tipe data yang sama. Dalam R, vektor bisa dibuat menggunakan fungsi c(). Contoh: c(1, 2, 3, 4) untuk numeric atau c("a", "b", "c") untuk character.
+
+•	**Matriks**: Struktur data dua dimensi, dimana setiap elemen harus memiliki tipe data yang sama. Matriks bisa dibuat dengan fungsi matrix().
+
+•	**Array**: Versi yang lebih umum dari matriks yang bisa memiliki lebih dari dua dimensi. Array dibuat dengan fungsi array().
+
+•	**Packages**: Kelola paket-paket R, instalasi, dan update.
+
+•	**Help**: Akses dokumentasi untuk fungsi R.
+
+•	**Viewer**: Tampilkan konten HTML, PDF, dan lainnya.
 
