@@ -308,7 +308,7 @@ namaFungsi <- function(argumen1, argumen2, ...) {
 
 **Pakai dan Modifikasi Fungsi dari Paket Lain:**
 
-•	**Pakai Fungsi**: R memiliki ribuan paket yang dapat diinstal dan digunakan. Setiap paket ini memiliki fungsi-fungsi khusus. Misalnya, fungsi ggplot() dari paket ggplot2 digunakan untuk membuat visualisasi data yang kompleks.
+•	**Pakai Fungsi**: R memiliki ribuan paket yang dapat diinstal dan digunakan. Setiap paket ini memiliki fungsi-fungsi khusus. Misalnya, fungsi _ggplot()_ dari paket ggplot2 digunakan untuk membuat visualisasi data yang kompleks.
 
 •	**Modifikasi Fungsi**: Anda bisa memodifikasi fungsi yang ada atau menulis fungsi pembantu untuk meningkatkan atau mengadaptasi fungsionalitasnya. Hal ini sering dilakukan dengan menulis fungsi baru yang menggunakan fungsi dari paket lain sebagai bagian dari operasinya.
 
