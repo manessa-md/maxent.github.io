@@ -264,6 +264,26 @@ data_mutated <- mutate(data_selected, new_age = age + 5)
 # Mengekspor data ke file CSV baru
 write.csv(data_mutated, "path/to/updated_file.csv")
 ```
+code tanpa dplyr
+```
+# Mengimpor data dari file CSV
+data <- read.csv("path/to/file.csv")
+
+# Filter untuk memilih baris dengan umur lebih dari 30 tahun
+data_filtered <- data[data$age > 30, ]
+
+# Mengurutkan data berdasarkan umur
+data_sorted <- data_filtered[order(data_filtered$age), ]
+
+# Memilih kolom tertentu
+data_selected <- data_sorted[, c("name", "age")]
+
+# Menambahkan kolom baru dengan umur yang ditambah 5
+data_selected$new_age <- data_selected$age + 5
+
+# Mengekspor data ke file CSV baru
+write.csv(data_selected, "path/to/updated_file.csv", row.names = FALSE)
+```
 
 ---
 ## 4: FUNGSI DI R
