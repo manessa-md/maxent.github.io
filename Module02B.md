@@ -146,12 +146,13 @@ get_gbif_data <- function(genus, species) {
   
   # Filter and transform data
   data <- data %>%
-    filter(!is.na(decimalLongitude)) %>%
-    mutate(species = 1) %>%
-    select(decimalLongitude, decimalLatitude, species)
+    filter(!is.na(lon)) %>%
+    mutate(species = 1) 
+  
+  data = data[,c('lon','lat','species')]
   
   # Convert to spatial data
-  coordinates(data) <- ~decimalLongitude + decimalLatitude
+  coordinates(data) <- ~lon + lat
   
   return(data)
 }
@@ -160,7 +161,6 @@ get_gbif_data <- function(genus, species) {
 genus <- "Leucopsar"
 species <- "rothschildi"
 sp <- get_gbif_data(genus, species)
-print(head(sp))
 
 ```
 Langkah-langkah dalam pengambilan data:
