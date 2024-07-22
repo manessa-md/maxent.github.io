@@ -140,17 +140,27 @@ Proses pengambilan dan persiapan data kejadian spesies adalah langkah penting da
 
 ### Pengambilan Data dari GBIF
 ```
-species_names <- c("Leucopsar rothschildi")
-sp <- gbif(genus = "Leucopsar", species = "rothschildi", download = TRUE, geo = TRUE, sp = FALSE) 
+get_gbif_data <- function(genus, species) {
+  # Download data from GBIF
+  data <- gbif(genus = genus, species = species, download = TRUE, geo = TRUE, sp = FALSE)
+  
+  # Filter and transform data
+  data <- data %>%
+    filter(!is.na(decimalLongitude)) %>%
+    mutate(species = 1) %>%
+    select(decimalLongitude, decimalLatitude, species)
+  
+  # Convert to spatial data
+  coordinates(data) <- ~decimalLongitude + decimalLatitude
+  
+  return(data)
+}
 
-spe <- sp %>%
-      filter(!is.na(lon)) %>%
-      mutate(species = 1) 
 
-sp = spe[,c('lon','lat','species')]
-head(sp)
-coordinates(sp) = ~lon + lat
-plot(sp)
+genus <- "Leucopsar"
+species <- "rothschildi"
+sp <- get_gbif_data(genus, species)
+print(head(sp))
 
 ```
 Langkah-langkah dalam pengambilan data:
