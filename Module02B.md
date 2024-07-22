@@ -170,16 +170,6 @@ Langkah-langkah dalam pengambilan data:
  3. **Transformasi Data:** Data ditransformasi ke format ```sf``` (simple features), yang merupakan format yang efisien untuk analisis geospasial dalam R.
  4. **Pemotongan Data:** Data dipotong sesuai dengan ```study_extent``` untuk memastikan bahwa hanya data dalam area studi yang dijaga.
 
-### Integrasi Data Lingkungan
-```
-{
-  .data <- .
-  environmental_values <- extract(biom, .data)
-  environmental_df <- as.data.frame(environmental_values)
-  combined_data <- cbind(.data, environmental_df)
-}
-sp <- as(sp, 'Spatial')
-```
 Setelah data kejadian spesies siap, nilai lingkungan dari raster bioklimatik diekstrak untuk setiap titik kejadian. Data ini kemudian digabungkan dengan data kejadian spesies untuk membuat satu set data yang mencakup informasi lokasi dan kondisi lingkungan.
 
 ### Visualisasi Data Kejadian Spesies
