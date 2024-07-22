@@ -31,8 +31,6 @@ Dalam konteks pengolahan data dan analisis menggunakan R, sangat penting untuk m
 Fungsi ensurePackages bertujuan untuk memastikan bahwa semua paket yang diperlukan untuk skrip Anda sudah terinstal dan terload ke sesi R saat ini. Ini mengurangi risiko menghadapi error karena kekurangan paket saat skrip dijalankan.
 
 ```
-r
-Copy code
 ensurePackages <- function(packages) {
     # Identifikasi paket yang belum terinstal
     new_packages <- packages[!packages %in% rownames(installed.packages())]
@@ -58,8 +56,6 @@ ensurePackages <- function(packages) {
 Skrip Anda mencakup paket-paket berikut sebagai bagian dari analisis:
 
 ```
-r
-Copy code
 packages <- c("terra", "caret", "rsample", "sf", "dismo", "dplyr", "randomForest", "kernlab", "stats", "gam", "mgcv", "gbm", "tree", "mda", "ggplot2", "sdm", "sdmpredictors", "usdm", "stringr", "mapview", "raster", "geodata")
 ```
 Setiap paket ini memiliki peran spesifik dalam analisis, seperti pemodelan, visualisasi, dan manipulasi data.
@@ -69,8 +65,6 @@ Dengan menggunakan pendekatan sistematis dalam mengelola paket, Anda memastikan 
 Bagian terakhir dari fungsi ensurePackages ini adalah memastikan bahwa semua paket yang telah diidentifikasi sebelumnya sebagai diperlukan benar-benar terinstal dan terload dalam sesi R Anda. Ini adalah langkah penting untuk mempersiapkan lingkungan eksekusi skrip sehingga semua fungsionalitas yang diperlukan tersedia tanpa masalah saat skrip dijalankan.
 
 ```
-r
-Copy code
 # Pastikan semua paket terinstal dan terload
 ensurePackages(packages)
 ```
@@ -94,8 +88,6 @@ Dalam modul analisis distribusi spesies, persiapan data bioklimat adalah langkah
 Skrip Anda mencakup paket-paket berikut sebagai bagian dari analisis:
 
 ```
-r
-Copy code
 # Mengambil variabel bioklimat dari WorldClim dengan resolusi 10 arc-menit
 bio <- worldclim_global(res = 10, var = "bio", path = data_path)
 bio <- raster::stack(bio)  # Menumpuk raster untuk memudahkan pengolahan
@@ -104,8 +96,6 @@ Di sini, ```worldclim_global``` digunakan untuk mengambil data variabel bioklima
 
 ### Konversi Raster ke DataFrame untuk Perhitungan VIF
 ```
-r
-Copy code
 # Konversi data raster ke data frame untuk kalkulasi VIF
 bio_df <- as.data.frame(values(bio), xy = TRUE)  # Menghindari kelebihan memori
 bio_df <- na.omit(bio_df)  # Menghilangkan nilai NA
@@ -115,8 +105,6 @@ Data raster dikonversi ke format data frame untuk memfasilitasi analisis statist
 
 ### Perhitungan dan Seleksi Variabel dengan VIF
 ```
-r
-Copy code
 # Menghitung VIF dan mengeksklusi lapisan dengan korelasi tinggi
 vif_results <- vifcor(bio_df[, -c(1,2)])  # Kolom pertama dan kedua biasanya adalah koordinat
 vif_to_exclude <- vif_results@excluded  # Menggunakan threshold yang telah ditentukan
@@ -128,8 +116,6 @@ Variabel Inflation Factor (VIF) digunakan untuk mengidentifikasi dan mengeksklus
 
 ### Pengambilan dan Penyesuaian Data Bioklimat Masa Depan
 ```
-r
-Copy code
 # Mengambil data bioklimat masa depan berdasarkan skenario RCP 8.5 dari model CMIP5
 biof <- cmip6_world("CNRM-CM6-1", "585", "2061-2080", var="bioc", res=10, path = data_path)
 biof <- raster::stack(biof)
@@ -141,8 +127,6 @@ Data bioklimat masa depan diambil dari model CMIP6 dengan skenario RCP 8.5, yang
 
 ### Penentuan dan Penyesuaian Ekstensi Geografis
 ```
-r
-Copy code
 # Mendefinisikan dan menyesuaikan ekstensi geografis untuk area studi
 study_extent <- extent(92.5154, 154.0976, -13.71008, 10.08345)
 biom <- crop(biom, study_extent)
@@ -156,8 +140,6 @@ Proses pengambilan dan persiapan data kejadian spesies adalah langkah penting da
 
 ### Pengambilan Data dari GBIF
 ```
-r
-Copy code
 species_names <- c("Leucopsar rothschildi")
 sp <- gbif(genus = "Leucopsar", species = "rothschildi", download = TRUE, geo = TRUE, sp = FALSE) %>%
   filter(!is.na(lon)) %>%
@@ -175,8 +157,6 @@ Langkah-langkah dalam pengambilan data:
 
 ### Integrasi Data Lingkungan
 ```
-r
-Copy code
 {
   .data <- .
   environmental_values <- extract(biom, .data)
@@ -189,8 +169,6 @@ Setelah data kejadian spesies siap, nilai lingkungan dari raster bioklimatik die
 
 ### Visualisasi Data Kejadian Spesies
 ```
-r
-Copy code
 plot(biom[[2]])  # Plotting one of the bioclimatic layers
 points(sp, cex = 0.5, pch = 16)  # Plotting species occurrence points
 ```
@@ -201,8 +179,6 @@ Proses pemodelan distribusi spesies menggunakan data yang telah dikumpulkan dan 
 
 ### Persiapan Data untuk Pemodelan
 ```
-r
-Copy code
 d <- sdmData(formula = species ~ ., train = sp, predictors = biom, bg = list(n=1000, method = 'gRandom'))
 ```
 
@@ -210,8 +186,6 @@ Data disiapkan dengan fungsi ```sdmData```, yang mengintegrasikan data kejadian 
 
 ### Menjalankan Model Distribusi Spesies
 ```
-r
-Copy code
 m <- sdm::sdm(species ~ ., d, methods = c('glm', 'svm', 'rf'), replication = c('cv', 'boot'), cv.folds = 5, n = 10)
 gui(m)
 ```
@@ -220,8 +194,6 @@ Beberapa algoritma digunakan untuk pemodelan, termasuk Regresi Logistik Generali
 
 ### Prediksi dan Visualisasi Distribusi Saat Ini
 ```
-r
-Copy code
 current_pred <- predict(m, biom, paste(species_names, "predictions.img", sep = ""), mean = TRUE, overwrite = TRUE)
 plot(current_pred)
 ```
@@ -230,8 +202,6 @@ Setelah model-model tersebut dilatih, mereka digunakan untuk memprediksi distrib
 
 ### Pemodelan Ensemble untuk Kondisi Saat Ini
 ```
-r
-Copy code
 current_ens <- ensemble(m, biom, paste(species_names, "ens.img", sep = ""), setting = list(method = 'weights', stat = "TSS", opt = 2))
 plot(current_ens)
 ```
@@ -245,8 +215,6 @@ Dalam menghadapi perubahan iklim, memprediksi bagaimana distribusi spesies mungk
 
 ### Prediksi Distribusi Masa Depan
 ```
-r
-Copy code
 future_pred <- predict(m, biof, paste(species_names, "predictionsf.img", sep = ""), overwrite = TRUE)
 ```
 
@@ -254,8 +222,6 @@ Prediksi ini menggunakan model yang telah dilatih (```m```) dan data bioklimatik
 
 ### Pemodelan Ensemble untuk Kondisi Masa Depan
 ```
-r
-Copy code
 future_ens <- ensemble(m, biof, paste(species_names, "ensf.img", sep = ""), overwrite = TRUE, setting = list(method = 'weights', stat = "TSS", opt = 2))
 plot(future_ens)
 ```
@@ -266,8 +232,6 @@ Pemodelan ensemble diimplementasikan untuk memperkuat keandalan prediksi masa de
 ### Pengaturan Ambang Batas pada Prediksi Ensemble
 Fungsi untuk mengatur ambang batas pada prediksi ensemble membantu dalam mengkategorikan area sebagai cocok atau tidak cocok untuk spesies berdasarkan nilai probabilitas tertentu.
 ```
-r
-Copy code
 threshold_ensemble <- function(ensemble, threshold = 0.4) {
     ensemble[ensemble >= threshold] <- 1
     ensemble[ensemble < threshold] <- NA
@@ -280,8 +244,6 @@ Fungsi ini menetapkan area di mana probabilitas keberadaan spesies di atas amban
 ### Aplikasi Pengaturan Ambang dan Visualisasi
 Fungsi untuk mengatur ambang batas pada prediksi ensemble membantu dalam mengkategorikan area sebagai cocok atau tidak cocok untuk spesies berdasarkan nilai probabilitas tertentu.
 ```
-r
-Copy code
 current_ens1 <- threshold_ensemble(current_ens)
 future_ens1 <- threshold_ensemble(future_ens)
 
