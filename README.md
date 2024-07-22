@@ -13,6 +13,6 @@ Penyelesaian latihan ini memerlukan penggunaan R dan Rstudio. Jika Anda menginst
 --------------
 **Module Pelatihan dapat diakses pada link berikut:**
 1. [Module 1: Dasar R](https://github.com/manessa-md/maxent.github.io/blob/main/Module02A.md)
-2. [Module 2: Data GBIF](https://github.com/manessa-md/maxent.github.io/blob/main/Module02B.md)
+2. [Module 2: Data GBIF](https://github.com/manessa-md/maxent.github.io/blob/main/Module02C.md)
 3. [Module 3: Analisis Distribusi Spesies Menggunakan Data Bioklimat](https://github.com/manessa-md/maxent.github.io/blob/main/Module02C.md)
 4. [Module 4: Analisis Distribusi Spesies Menggunakan Data Biofisik](https://github.com/manessa-md/maxent.github.io/blob/main/Module0DC.md)
